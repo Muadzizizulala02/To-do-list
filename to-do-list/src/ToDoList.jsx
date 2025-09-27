@@ -23,6 +23,7 @@ function ToDoList() {
   }
 
   function deleteTask(index) {
+    // filter creates a new array that keeps only the tasks where the position i is not equal to the one you clicked.
     const updatedTasks = tasks.filter((_, i) => i !== index);
     setTask(updatedTasks);
   }
@@ -30,25 +31,26 @@ function ToDoList() {
   function moveTaskUp(index) {
     // to make sure yg paling atas xyh move dh
     if (index > 0) {
-      const updatedTasks = [...tasks];
+      const updatedTasks = [...tasks]; // make a copy of the current list
+      //Use [a,b] = [b,a] to swap the current task with the one above it.
       [updatedTasks[index], updatedTasks[index - 1]] = [
         updatedTasks[index - 1],
         updatedTasks[index],
       ];
 
-      setTask(updatedTasks)
+      setTask(updatedTasks);
     }
   }
 
   function moveTaskDown(index) {
     if (index < tasks.length - 1) {
-      const updatedTasks = [...tasks];
+      const updatedTasks = [...tasks]; // make a copy of the current list
       [updatedTasks[index], updatedTasks[index + 1]] = [
         updatedTasks[index + 1],
         updatedTasks[index],
       ];
 
-      setTask(updatedTasks)
+      setTask(updatedTasks);
     }
   }
 
@@ -79,8 +81,11 @@ function ToDoList() {
           <li key={index} className="task-item">
             <span className="text">{task}</span>
             <div className="button-group">
-              {/* the delete button */}
-              <button className="delete-button" onClick={() => deleteTask(index)}>
+              {/* the delete button wiht the the current index*/}
+              <button
+                className="delete-button"
+                onClick={() => deleteTask(index)}
+              >
                 Delete
               </button>
               {/* the move up button */}
@@ -88,7 +93,10 @@ function ToDoList() {
                 ⬆️
               </button>
               {/* the move down button */}
-              <button className="move-button" onClick={() => moveTaskDown(index)}>
+              <button
+                className="move-button"
+                onClick={() => moveTaskDown(index)}
+              >
                 ⬇️
               </button>
             </div>
