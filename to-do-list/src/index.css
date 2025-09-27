@@ -1,0 +1,144 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* dark base with a subtle gradient for depth */
+  background: linear-gradient(135deg, #1e1e2f 0%, #2a2a3d 100%);
+  color: #f0f0f0;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Main container */
+.toDoList {
+  max-width: 80%;
+  margin: 50px auto;
+  padding: 24px;
+  background: #2f2f42; /* slightly lighter than the page bg */
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Title */
+.toDoList h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #6ee7ff; /* vibrant cyan accent */
+  text-shadow: 0 0 6px rgba(110, 231, 255, 0.6);
+}
+
+/* Input area */
+.input-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.task-input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 2px solid #444;
+  outline: none;
+  font-size: 16px;
+  background: #1c1c2b;
+  color: #e0e0e0;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.task-input:focus {
+  border: 2px solid #6ee7ff;
+  box-shadow: 0 0 6px #6ee7ff;
+}
+
+/* Add button */
+.add-button {
+  padding: 10px 18px;
+  background: #6ee7ff;
+  color: #1c1c2b;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.add-button:hover {
+  background: #4ad6f5;
+  transform: scale(1.05);
+}
+
+/* Task list */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-item {
+  background: #3a3a52;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s;
+}
+
+.task-item:hover {
+  transform: translateY(-2px);
+}
+
+.text {
+  flex: 1;
+  font-size: 17px;
+  font-weight: 500;
+  color: #f8f8f8;
+}
+
+/* Buttons inside each task */
+.button-group {
+  display: flex;
+  gap: 8px;
+}
+
+.delete-button {
+  background: #ff5f5f;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.delete-button:hover {
+  background: #ff3b3b;
+  transform: scale(1.05);
+}
+
+.move-button {
+  background: #6ee7ff;
+  border: none;
+  color: #1c1c2b;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.move-button:hover {
+  background: #4ad6f5;
+  transform: scale(1.05);
+}
